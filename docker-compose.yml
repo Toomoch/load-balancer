@@ -1,0 +1,17 @@
+version: '3'
+services:
+  hello-kubernetes-1:
+    image: 'paulbouwer/hello-kubernetes:1.10'
+  hello-kubernetes-2:
+    image: 'paulbouwer/hello-kubernetes:1.10'
+  nginx:
+    image: 'nginx:latest'
+    ports:
+      - '443:443'
+    depends_on:
+      - hello-kubernetes-1
+      - hello-kubernetes-2
+    volumes:
+      - './nginx.conf:/etc/nginx/nginx.conf:ro'
+      - './cert.pem:/etc/nginx/ssl/cert.pem:ro'
+      - './key.pem:/etc/nginx/ssl/key.pem:ro'

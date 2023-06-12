@@ -1,4 +1,4 @@
-## **Load Balancer with NGINX**
+## **Load Balancer with NGINX and Docker**
 
 **How to run:**
  1. Generate an SSL certificate and key and place them in `./cert.pem` and  `./key.pem` respectively (a self-signed certificate and key is already present for demonstration purposes).
